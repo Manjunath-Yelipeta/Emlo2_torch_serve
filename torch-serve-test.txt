@@ -1,0 +1,6 @@
+/home/ubuntu/emlo2-session4_Demo_Deployments/logs/train/runs/2022-11-21_11-09-47/checkpoints/epoch_003.ckpt
+/home/ubuntu/emlo2-session4_Demo_Deployments/src/torch_handler/cifar_handler.py
+/home/ubuntu/emlo2-session4_Demo_Deployments/src/torch_handler/cifar_classes/index_to_name.json
+
+
+torch-model-archiver --model-name mnist_basic --version 1.0 --serialized-file /home/ubuntu/lightning-hydra-template/logs/train/runs/2022-10-24_17-36-21/model.script.pt --handler /home/ubuntu/lightning-hydra-template/src/torch_handlers/mnist_handler.py --extra-files /home/ubuntu/lightning-hydra-template/src/torch_handlers/mnist_classes/index_to_name.json
