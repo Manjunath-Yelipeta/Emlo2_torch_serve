@@ -4,5 +4,10 @@
 
 torchserve --start --model-store model_store --models cifar=cifar_basic.mar
 
+torchserve --start --model-store model_store --models cifar=cifar_basic.mar --ts-config config.properties
+
+curl http://127.0.0.1:8080/predictions/cifar -T input.jpg
+
+python ts_scripts/torchserve_grpc_client.py infer cifar ../input.jpg
 
 torch-model-archiver --model-name cifar_basic --version 1.0 --serialized-file /home/ubuntu/Emlo2-Model_serving-torch-serve/model_store/model.script.pt  --handler /home/ubuntu/Emlo2-Model_serving-torch-serve/src/torch_handler/cifar_handler.py --extra-files /home/ubuntu/Emlo2-Model_serving-torch-serve/src/torch_handler/cifar_classes/index_to_name.json
